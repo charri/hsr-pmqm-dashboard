@@ -1,0 +1,17 @@
+.risk-table {
+	width: 400px;
+}
+
+.risk-table td {
+	height: 70px;
+	width: 50px;
+	vertical-align: middle !important;
+}
+
+.killer {
+	background-color: #F37474 !important;
+}
+
+.ok {
+	background-color: #99FF99 !important;
+}
