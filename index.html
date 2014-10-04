@@ -107,6 +107,17 @@
 					    <td>a</td>
 					  </tr>
 				</table>
+                                <br>
+				<div id="plot-dateGraph" style="min-height:150px;">
+				<script type="text/javascript">
+
+					$(function() {
+                                                var g1 = [[0,0], [10,12]];
+						$.plot("#plot-dateGraph", [g1]);
+					});
+
+				</script>
+                                </div>
 			  </div>
 			</div>
 			
@@ -199,7 +210,6 @@
 			  <div class="panel-body">
 				
 				<div id="plot-lorem" style="min-height:150px;">
-					
 				<script type="text/javascript">
 
 					$(function() {
