@@ -1,0 +1,35 @@
+.risk-table {
+	width: 450px;
+}
+
+.risk-table td {
+	height: 70px;
+	width: 50px;
+	vertical-align: middle !important;
+	text-align:center;
+}
+
+.ok {
+	background-color: #99FF99 !important;
+}
+
+.circle-success{
+	color: green !important;
+}
+
+.circle-warning{
+	color: orange !important;
+}
+
+.circle-danger{
+	color: rgb(219, 44, 44) !important;
+}
+
+div.vertical
+{
+ transform: rotate(-90deg);
+ -webkit-transform: rotate(-90deg); /* Safari/Chrome */
+ -moz-transform: rotate(-90deg); /* Firefox */
+ -o-transform: rotate(-90deg); /* Opera */
+ -ms-transform: rotate(-90deg); /* IE 9 */
+}
