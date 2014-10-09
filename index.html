@@ -11,15 +11,15 @@
     <link href="css/style.css" rel="stylesheet">
 	<link href="css/bootstrap-theme.min.css" rel="stylesheet">
     <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-	
+
 	<script src="js/jquery-2.1.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
 	<script src="lib/flot/jquery.flot.min.js"></script>
   </head>
   <body>
-	
+
     <div class="container-fluid">
-	
+
 		<div class="row">
 			<div class="col-md-12">
 				<h1>Dashboard <small>Projektname</small>
@@ -29,8 +29,8 @@
 		<br>
 		<div class="row">
 		  <div class="col-md-6">
-			
-			
+
+
 			<div class="panel panel-default">
 			  <div class="panel-heading">
 				<h3 class="panel-title">Projektmanager</h3>
@@ -39,7 +39,7 @@
 				Panel content
 			  </div>
 			</div>
-			
+
 		  </div>
 		  <div class="col-md-6">
 			<div class="panel panel-default">
@@ -53,11 +53,11 @@
 		  </div>
 
 		</div>
-		
+
 		<div class="row">
 		  <div class="col-md-6">
-			
-			
+
+
 			<div class="panel panel-default">
 			  <div class="panel-heading">
 				<h3 class="panel-title">Milestones</h3>
@@ -120,7 +120,7 @@
                                 </div>
 			  </div>
 			</div>
-			
+
 		  </div>
 		  <div class="col-md-6">
 			<div class="panel panel-default">
@@ -134,11 +134,11 @@
 		  </div>
 
 		</div>
-		
+
 		<div class="row">
 		  <div class="col-md-6">
-			
-			
+
+
 			<div class="panel panel-default">
 			  <div class="panel-heading">
 				<h3 class="panel-title">Risiken</h3>
@@ -148,25 +148,36 @@
 					class="table table-bordered table-hover table-striped risk-table">
 					<tbody>
 						<tr>
+              <td rowspan="6" style="width:20px; padding-top:150px;"><div style="width:20px;" class="vertical">Eintrittswahrscheinlichkeit</div></td>
 							<td>sehr hoch</td>
 							<td class="warning"></td>
 							<td class="warning"></td>
 							<td class="danger"></td>
 							<td class="danger"></td>
-							<td class="killer"></td>
+							<td class="danger"></td>
 						</tr>
 						<tr>
 							<td>hoch</td>
-							<td class="success"></td>
 							<td class="warning"></td>
 							<td class="warning"></td>
-							<td class="danger"></td>
+							<td class="warning"></td>
+							<td class="danger">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle circle-danger fa-stack-2x"></i>
+                  <i class="fa fa-inverse fa-stack-1x">1</i>
+                </span>
+              </td>
 							<td class="danger"></td>
 						</tr>
 						<tr>
 							<td>mittel</td>
 							<td class="success"></td>
-							<td class="success"></td>
+							<td class="warning">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle circle-warning fa-stack-2x"></i>
+                  <i class="fa fa-inverse fa-stack-1x">2</i>
+                </span>
+              </td>
 							<td class="warning"></td>
 							<td class="warning"></td>
 							<td class="danger"></td>
@@ -175,32 +186,43 @@
 							<td>gering</td>
 							<td class="success"></td>
 							<td class="success"></td>
-							<td class="success"></td>
+							<td class="warning"></td>
 							<td class="warning"></td>
 							<td class="warning"></td>
 						</tr>
 						<tr>
 							<td>sehr gering</td>
 							<td class="success"></td>
+							<td class="success">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle circle-success fa-stack-2x"></i>
+                  <i class="fa fa-inverse fa-stack-1x">3</i>
+                </span>
+              </td>
 							<td class="success"></td>
-							<td class="success"></td>
-							<td class="success"></td>
+							<td class="warning"></td>
 							<td class="warning"></td>
 						</tr>
 
 						<tr>
-							<td></td>
+              <td></td>
 							<td>sehr gering</td>
 							<td>gering</td>
 							<td>mittel</td>
 							<td>hoch</td>
 							<td>sehr hoch</td>
 						</tr>
+
+            <tr>
+              <td colspan="7" style="height:40px;">
+                Schadenshöhe
+              </td>
+            </tr>
 					</tbody>
 				</table>
 			  </div>
 			</div>
-			
+
 		  </div>
 		  <div class="col-md-6">
 			<div class="panel panel-default">
@@ -208,7 +230,7 @@
 				<h3 class="panel-title">Lorem Ipsum</h3>
 			  </div>
 			  <div class="panel-body">
-				
+
 				<div id="plot-lorem" style="min-height:150px;">
 				<script type="text/javascript">
 
@@ -231,17 +253,17 @@
 
 				</script>
 				</div>
-				
-				
+
+
 			  </div>
 			</div>
 		  </div>
 
 		</div>
 	</div>
-	
 
-    
-    
+
+
+
   </body>
 </html>
