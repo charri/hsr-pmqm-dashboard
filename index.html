@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Dashboard</title>
+    <title>Insieme-2 - Dashboard (09. Oktober 2014)</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -22,10 +22,9 @@
 
 		<div class="row">
 			<div class="col-md-12">
-				<h1>Dashboard <small>Lorem ipsum</small>
+				<h1>Insieme-2 <small>Dashboard (09. Oktober 2014)</small>
 			</div>
 		</div>
-		<br>
 		<br>
 		<div class="row">
 		  <div class="col-md-6">
@@ -40,28 +39,48 @@
 					<div class="col-md-6">
 					<table class="table table-condensed">
 					  <tr>
-						<td>Projektname</td>
-						<td>Lorem ipsum</td>
+						<th style="width:33%">Projektname</th>
+						<td>Insieme-2</td>
 					  </tr>
 					  <tr>
-						<td>Projektnummer</td>
-						<td>Lorem ipsum</td>
+						<th>Projektnummer</th>
+						<td>#123</td>
 					  </tr>
 					  <tr>
-						<td>Projektleiter</td>
-						<td>Lorem ipsum</td>
+						<th>Projektleiter</th>
+						<td>Peter Müller&nbsp;&nbsp;<a href="mailto:peter.mueller@example.ch" title="Mail" class="pull-right"><span class="glyphicon glyphicon-envelope"></span></a></td>
 					  </tr>
 					  <tr>
-						<td>Projektmitarbeiter</td>
-						<td>Lorem ipsum</td>
+						<th>Projektmitarbeiter</th>
+						<td>
+							&dash; M. Juchli&nbsp;&nbsp;<a href="mailto:example@example.ch" class="pull-right" title="Mail"><span class="glyphicon glyphicon-envelope"></span></a><br>
+							&dash; T. Charriere&nbsp;&nbsp;<a href="mailto:example@example.ch" title="Mail" class="pull-right"><span class="glyphicon glyphicon-envelope"></span></a><br>
+							&dash; M. Loop&nbsp;&nbsp;<a href="mailto:example@example.ch" title="Mail" class="pull-right"><span class="glyphicon glyphicon-envelope"></span></a>
+						</td>
 					  </tr>
 					</table>
 					</div>
 					<div class="col-md-6">
 					<table class="table table-condensed">
 					  <tr>
-						<td>Projektname</td>
-						<td>Lorem ipsum</td>
+						<th style="width:33%">Auftraggeber</th>
+						<td>Eidgenössisches Finanzdepartement EFD</td>
+					  </tr>
+					  <tr>
+						<th>Produktmanager</th>
+						<td>Hans Müller&nbsp;&nbsp;<a href="mailto:hans.mueller@example.ch" title="Mail" class="pull-right"><span class="glyphicon glyphicon-envelope"></span></a></td>
+					  </tr>
+					  <tr>
+						<th>Projektstart</th>
+						<td>2014-01-20</td>
+					  </tr>
+					  <tr>
+						<th>Projektende (gepl.)</th>
+						<td>2015-03-30</td>
+					  </tr>
+					  <tr>
+						<th>Working days left</th>
+						<td>50 d</td>
 					  </tr>
 					</table>
 					</div>
@@ -76,8 +95,48 @@
 				<h3 class="panel-title">Health</h3>
 			  </div>
 			  <div class="panel-body">
-				Panel content
+				<div class="col-md-6">
+					<table class="table table-condensed">
+					  <tr>
+						<td style="width:50%">On Budget</td>
+						<td><h4 style="margin:0;padding:1px 0 3px 0;"><span class="label label-success">55.16%</span></h4></td>
+					  </tr>
+					  <tr>
+						<td>Cost Performance</td>
+						<td><h4 style="margin:0;padding:1px 0 3px 0;"><span class="label label-warning">0.64</span></h4></td>
+					  </tr>
+					  <tr>
+						<td>To-Complete Performance</td>
+						<td><h4 style="margin:0;padding:1px 0 3px 0;"><span class="label label-success">0.67</span></h4></td>
+					  </tr>
+					  <tr>
+						<td>Time Estimate at Completion	</td>
+						<td><h4 style="margin:0;padding:1px 0 3px 0;"><span class="label label-danger">87.80 d</span></h4></td>
+					  </tr>
+					</table>
+					</div>
+					<div class="col-md-6">
+					<table class="table table-condensed">
+					  <tr>
+						<td style="width:50%">On Time</td>
+						<td><h4 style="margin:0;padding:1px 0 3px 0;"><span class="label label-danger">18.10%</span></h4></td>
+					  </tr>
+					  <tr>
+						<td>Schedule Performance</td>
+						<td><h4 style="margin:0;padding:1px 0 3px 0;"><span class="label label-warning">0.82</span></h4></td>
+					  </tr>
+					  <tr>
+						<td>Variance at Completion</td>
+						<td><h4 style="margin:0;padding:1px 0 3px 0;"><span class="label label-warning">56.25%</span></h4></td>
+					  </tr>
+					  <tr>
+						<td>Time Estimate to Completion</td>
+						<td><h4 style="margin:0;padding:1px 0 3px 0;"><span class="label label-success">15.80 d</span></h4></td>
+					  </tr>
+					</table>
+					</div>
 			  </div>
+			  
 			</div>
 		  </div>
 
@@ -173,6 +232,8 @@
 				<h3 class="panel-title">Risiken</h3>
 			  </div>
 			  <div class="panel-body">
+				<div class="row">
+				<div class="col-xs-12 col-md-12 col-lg-6">
 			  	<table
 					class="table table-bordered table-striped risk-table">
 					<tbody>
@@ -249,9 +310,10 @@
             </tr>
 					</tbody>
 				</table>
-
+			</div>
+			<div class="col-xs-12 col-md-12 col-lg-6">
       <table
-        class="table table-bordered table-hover table-striped" style="width:450px;">
+        class="table table-bordered table-hover table-striped">
         <tbody>
             <tr>
               <td style="width:50px;">Nr.</td>
@@ -274,6 +336,8 @@
             </tr>
           </tbody>
         </table>
+		</div>
+		</div>
 			  </div>
 			</div>
 
