@@ -168,39 +168,39 @@
 					    <th>Difference</th>
 					  </tr>
 					  <tr>
-					    <td>Milestone1</td>
-					    <td>a</td>
-					    <td>a</td>
-					    <td>a</td>
-					    <td>a</td>
+					    <td>MS1-Inception</td>
+					    <td>2014-01-20</td>
+					    <td>2014-02-10</td>
+					    <td>2014-02-10</td>
+					    <td><h4 style="margin:0;padding:1px 0 3px 0;"><span class="label label-success">0</span></td>
 					  </tr>
 					  <tr>
-					    <td>Milestone2</td>
-					    <td>a</td>
-					    <td>a</td>
-					    <td>a</td>
-					    <td>a</td>
+					    <td>MS2-Elaboration-Spezifikation</td>
+					    <td>2014-01-20</td>
+					    <td>2014-05-20</td>
+					    <td>2014-06-20</td>
+					    <td><h4 style="margin:0;padding:1px 0 3px 0;"><span class="label label-danger">+30</span></td>
 					  </tr>
 					  <tr>
-					    <td>Milestone3</td>
-					    <td>a</td>
-					    <td>a</td>
-					    <td>a</td>
-					    <td>a</td>
+					    <td>MS3-Elaboration-Prototyp</td>
+					    <td>2014-06-20</td>
+					    <td>2014-09-10</td>
+					    <td>2014-09-01</td>
+					    <td><h4 style="margin:0;padding:1px 0 3px 0;"><span class="label label-warning">+21</span></td>
 					  </tr>
 					  <tr>
-					    <td>Milestone4</td>
-					    <td>a</td>
-					    <td>a</td>
-					    <td>a</td>
-					    <td>a</td>
+					    <td>MS4-Construction</td>
+					    <td>2014-09-01</td>
+					    <td>2015-02-01</td>
+					    <td></td>
+					    <td></td>
 					  </tr>
 					  <tr>
-					    <td>Milestone5</td>
-					    <td>a</td>
-					    <td>a</td>
-					    <td>a</td>
-					    <td>a</td>
+					    <td>MS5-Transition</td>
+					    <td></td>
+					    <td>2015-03-30</td>
+					    <td></td>
+					    <td></td>
 					  </tr>
 				</table>
                                 <br>
@@ -209,15 +209,27 @@
 
 	<script type="text/javascript">
 
-				 var data1 = [
-           [gd(2014, 0, 20), gd(2014, 0, 20)], [gd(2015, 3, 1), gd(2015, 3, 30)]];
+				 var sollGraph = [
+           [gd(2014, 0, 1), gd(2014, 0, 1)], [gd(2015, 3, 1), gd(2015, 3, 30)]];
 
+				 var ms1 = [
+           [gd(2014, 0, 1), gd(2014, 1, 1)], [gd(2014, 1, 1), gd(2014, 1, 1)]];
+
+			 var ms2 = [
+           [gd(2014, 0, 1), gd(2014, 4, 20)], [gd(2014, 2, 15), gd(2014, 4, 20)], [gd(2014, 3, 1), gd(2014, 5, 20)], [gd(2014, 5, 10), gd(2014, 5, 20)]];
+
+			 var ms3 = [
+           [gd(2014, 0, 1), gd(2014, 8, 20)], [gd(2014, 2, 15), gd(2014, 8, 20)], [gd(2014, 3, 1), gd(2014, 9, 20)], [gd(2014, 5, 10), gd(2014, 9, 20)], [gd(2014, 5, 20), gd(2014, 9, 11)], [gd(2014, 8, 23), gd(2014, 9, 11)]];
 
 
 
         var dataset = [
-            { label: "Soll", data: data1, points: { symbol: "triangle"} }
-          //  { label: "Change", data: data2, yaxis: 2 }
+            { label: "Soll", data: sollGraph },
+           { label: "MS1", data: ms1 },
+           { label: "MS2", data: ms2 },
+	   { label: "MS3", data: ms3 },
+        //   { label: "MS1", data: ms2 }
+          //  { label: "Change", data: data2, yaxis: , points: { symbol: "triangle"} }
         ];
 
       var options = {
@@ -246,7 +258,7 @@
                 mode: "time",
                 tickSize: [31, "day"],
                 tickLength: 1,
-                axisLabel: "2012",
+                axisLabel: "2014/2015",
                 axisLabelUseCanvas: true,
                 axisLabelFontSizePixels: 12,
                 axisLabelFontFamily: 'Verdana, Arial',
@@ -256,7 +268,7 @@
 
 	
           yaxes: [{
-                axisLabel: "Time",
+                axisLabel: "2014/2015",
 		mode: "time",
 		tickSize: [31, "day"],
                 axisLabelUseCanvas: true,
@@ -290,6 +302,61 @@
  
         var previousPoint = null, previousLabel = null;
         var monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+        $.fn.UseTooltip = function () {
+            $(this).bind("plothover", function (event, pos, item) {
+                if (item) {
+                    if ((previousLabel != item.series.label) || (previousPoint != item.dataIndex)) {
+                        previousPoint = item.dataIndex;
+                        previousLabel = item.series.label;
+                        $("#tooltip").remove();
+ 
+                        var x = item.datapoint[0];
+                        var y = item.datapoint[1];
+ 
+                        var color = item.series.color;
+                        var month = new Date(y).getMonth();
+
+			var day = new Date(y).getDate();
+ 
+                        //console.log(item);
+ 
+                        if (item.seriesIndex == 0) {
+                            showTooltip(item.pageX,
+                            item.pageY,
+                            color,
+                            "<strong>" + item.series.label + "</strong><br>" + monthNames[month] + " : <strong>" + day + "</strong>");
+                        } else {
+                            showTooltip(item.pageX,
+                            item.pageY,
+                            color,
+                            "<strong>" + item.series.label + "</strong><br>" + monthNames[month] + " : <strong>" + day + "</strong>");
+                        }
+                    }
+                } else {
+                    $("#tooltip").remove();
+                    previousPoint = null;
+                }
+            });
+        };
+ 
+        function showTooltip(x, y, color, contents) {
+            $('<div id="tooltip">' + contents + '</div>').css({
+                position: 'absolute',
+                display: 'none',
+                top: y - 40,
+                left: x - 120,
+                border: '2px solid ' + color,
+                padding: '3px',
+                'font-size': '9px',
+                'border-radius': '5px',
+                'background-color': '#fff',
+                'font-family': 'Verdana, Arial, Helvetica, Tahoma, sans-serif',
+                opacity: 0.9
+            }).appendTo("body").fadeIn(200);
+        }
+
+
  
 	$.plot($("#flot-placeholder1"), dataset, options);
             $("#flot-placeholder1").UseTooltip();
