@@ -13,8 +13,16 @@
     <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 
 	<script src="js/jquery-2.1.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+   	<script src="js/bootstrap.min.js"></script>
 	<script src="lib/flot/jquery.flot.min.js"></script>
+
+    <script type="text/javascript" src="lib/flot/jquery.flot.min.js"></script>
+    <script type="text/javascript" src="lib/flot/jquery.flot.time.js"></script>
+    <script type="text/javascript" src="lib/flot/jquery.flot.symbol.js"></script>
+    <script type="text/javascript" src="lib/flot/jquery.flot.axislabels.js"></script>
+    <script type="text/javascript" src="lib/jshashtable-2.1.js"></script>   
+    <script type="text/javascript" src="lib/jquery.numberformatter-1.2.3.min.js"></script>
+
   </head>
   <body>
 
@@ -196,15 +204,103 @@
 					  </tr>
 				</table>
                                 <br>
-				<div id="plot-dateGraph" style="min-height:150px;">
-				<script type="text/javascript">
+				<div id="flot-placeholder1" style="min-height:400px;">
+					
 
-					$(function() {
-                                                var g1 = [[0,0], [10,12]];
-						$.plot("#plot-dateGraph", [g1]);
-					});
+	<script type="text/javascript">
 
-				</script>
+				 var data1 = [
+           [gd(2014, 0, 20), gd(2014, 0, 20)], [gd(2015, 3, 1), gd(2015, 3, 30)]];
+
+
+
+
+        var dataset = [
+            { label: "Soll", data: data1, points: { symbol: "triangle"} }
+          //  { label: "Change", data: data2, yaxis: 2 }
+        ];
+
+      var options = {
+            series: {
+                lines: {
+                    show: true
+                },
+                points: {
+                    radius: 3,
+                    fill: true,
+                    show: true
+                }
+            },
+ /*           xaxis: {
+                mode: "time",
+                tickSize: [1, "month"],
+                tickLength: 0,
+                axisLabel: "2012",
+                axisLabelUseCanvas: true,
+                axisLabelFontSizePixels: 12,
+                axisLabelFontFamily: 'Verdana, Arial',
+                axisLabelPadding: 10
+            }, */
+
+            xaxis: {
+                mode: "time",
+                tickSize: [31, "day"],
+                tickLength: 1,
+                axisLabel: "2012",
+                axisLabelUseCanvas: true,
+                axisLabelFontSizePixels: 12,
+                axisLabelFontFamily: 'Verdana, Arial',
+                axisLabelPadding: 10
+            },
+
+
+	
+          yaxes: [{
+                axisLabel: "Time",
+		mode: "time",
+		tickSize: [31, "day"],
+                axisLabelUseCanvas: true,
+                axisLabelFontSizePixels: 12,
+                axisLabelFontFamily: 'Verdana, Arial',
+                axisLabelPadding: 3,
+            
+            }, {
+                position: "left",
+                axisLabelUseCanvas: true,
+            }
+          ], 
+            legend: {
+                noColumns: 0,
+                labelBoxBorderColor: "#000000",
+                position: "nw"
+            },
+            grid: {
+                hoverable: true,
+                borderWidth: 2,
+                borderColor: "#633200",
+                backgroundColor: { colors: ["#ffffff", "#EDF5FF"] }
+            },
+            colors: ["#FF0000", "#0022FF"]
+        };
+
+
+        function gd(year, month, day) {
+            return new Date(year, month, day).getTime();
+        }
+ 
+        var previousPoint = null, previousLabel = null;
+        var monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+ 
+	$.plot($("#flot-placeholder1"), dataset, options);
+            $("#flot-placeholder1").UseTooltip();
+
+	</script>
+
+
+
+
+
+
                                 </div>
 			  </div>
 			</div>
