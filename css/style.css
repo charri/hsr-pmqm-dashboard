@@ -33,3 +33,7 @@ div.vertical
  -o-transform: rotate(-90deg); /* Opera */
  -ms-transform: rotate(-90deg); /* IE 9 */
 }
+
+.risks td {
+  vertical-align: middle;
+}
